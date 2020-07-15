@@ -2,7 +2,7 @@
 
 My first movie app using React.
 
-URL : 
+URL : https://iwannagotonewyork.github.io/movie_app_2020/#/
 
 Functionality 
 1. Responsive Web page
