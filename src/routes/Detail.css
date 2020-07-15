@@ -1,0 +1,18 @@
+ .Detail__title {
+    height: 100px;    
+    width: 300px;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 30px;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025);
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.Detail__title > span {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
