@@ -1,47 +1,49 @@
 import React from 'react';
+import axios from "axios";
+import Movie from "./Movie";
 
-function Food({ name }) {
-  return (
-     <h1>I like {name}</h1>
-  )
-}
-
-const foodILike = [
-  {
-    name: "kimchi",
-    id: 1,
-  },
-  {
-    name: "KIMNAP",
-    id: 2,
-  },
-  {
-    name: "GOOKSU",
-    id: 3,
-  },
-  {
-    name: "CHICKEN",
-    id: 4
-  },
-  {
-    name: "PIZZA",
-    id: 5,
-  },
-  {
-    name: "GOGI",
-    id: 6,
+class App extends React.Component {
+  state = {
+    isLoading: true,
+    movies: [],
   }
-]
-
-function App() {
-  return ( 
+  getMovies = async () => {
+    const {
+      data: {
+        data: {
+          movies
+        }
+      }
+    } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by:rating") //API로부터 데이터를 fetching.
+    this.setState({
+      movies: movies,
+      isLoading: false
+    });
+     //state에 저장하고, 로딩상태 변경.
+    // movies: movies => movie로 변경가능 (자바스크립트 ES6 추가 기능)
+  }
+  componentDidMount() {
+    this.getMovies();
+  }
+  render() {
+    const { isLoading, movies} = this.state; //isLoading = true 라는 ES6 문법.
+    return ( 
     <div>
-      {foodILike.map(food => (
-        <Food name={food.name }/>
-      ))}
+      {isLoading ? "Loading..." : movies.map(movie => ( 
+        <Movie 
+          key={movie.id}
+          id={movie.id}
+          year={movie.year}
+          title={movie.title}
+          summary={movie.summary}
+          poster={movie.medium_cover_image}
+        />
+        ))
+      } 
     </div>
-    // console.log(foodILike)
-  );
+    )
+  }
 }
+
 
 export default App;
