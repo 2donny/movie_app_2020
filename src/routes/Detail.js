@@ -1,5 +1,6 @@
 import React from "react";
 import "./Detail.css";
+import { render } from "@testing-library/react";
 
 //class 컴포넌트로 만드는이유는, 컴포넌트의 state가 없는 상황을 대비하기 때문, state가 undefined가 되면 redirect 할 수 있도록.
 class Detail extends React.Component {
@@ -11,16 +12,23 @@ class Detail extends React.Component {
     }
     render() {
         const { location } = this.props;
-        if(location.state) {
-            return <div className="Detail__title">
-                <span> Movie's title is a "{ location.state.title}"</span>
-            </div>
+        const state = location.state;
+        if(state) {
+            return (
+                <div className="Container">
+                    <div className="Detail__container">
+                        <img src={state.poster} alt={state.title}></img>
+                        <div className="Detail__data">
+                            <h1 className={state.title}> Movie's title is  title "{ state.title} "</h1>
+                            <h3 className={state.genres}> Movie's genres are  "{ state.genres}     "</h3>
+                            <h4 className={state.summary}> Movie's summary is a "{ state.summary} "</h4>
+                        </div>
+                    </div>
+                </div>
+            )
         }else {
             return null;
         }
-        
     }
 }
-
-
 export default Detail;

@@ -19,9 +19,9 @@
 }
 
 .Link:hover {
+    cursor: pointer;
     color: lightgrey;
 }
 .Link:active{
-    outline: none;
     color: whitesmoke;
 }
