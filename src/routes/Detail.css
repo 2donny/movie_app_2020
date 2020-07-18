@@ -8,7 +8,7 @@
 
 .Detail__container {
     width: 80%;
-    display: flex;    
+    display: flex; 
     padding: 30px;
 
 }
@@ -19,7 +19,10 @@
 }
 
 .Detail__data {
-    text-align: center;
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    justify-content: center;
 }
 
 /* 
