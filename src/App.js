@@ -17,7 +17,8 @@ function App() {
       <Route path="/movie/:id" component={ Detail }/>
     </HashRouter>
   )
-  
+    
 }
 
 export default App;
+

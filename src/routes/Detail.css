@@ -10,7 +10,6 @@
     width: 80%;
     display: flex; 
     padding: 30px;
-
 }
 
 .Detail__container > img {
@@ -25,7 +24,7 @@
     justify-content: center;
 }
 
-/* 
+
 
 .Detail__title {
     height: 100px;    
@@ -44,4 +43,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-} */
+}
