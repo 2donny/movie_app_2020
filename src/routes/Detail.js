@@ -18,9 +18,9 @@ class Detail extends React.Component {
                     <div className="Detail__container">
                         <img src={state.poster} alt={state.title}></img>
                         <div className="Detail__data">
-                            <h1 className={state.title}> Movie's title is  title "{ state.title} "</h1>
-                            <h3 className={state.genres}> Movie's genres are  "{ state.genres}     "</h3>
-                            <h4 className={state.summary}> Movie's summary is a "{ state.summary} "</h4>
+                            <h1 className={state.title}> 영화 제목 : "{ state.title} "</h1>
+                            <h3 className={state.genres}> 영화 장르 : "{ state.genres}     "</h3>
+                            <h4 className={state.summary}> 줄거리 요약 : "{ state.summary} "</h4>
                         </div>
                     </div>
                 </div>
